@@ -31,7 +31,7 @@ jobs:
         # database without extra flags.
         working-directory: apps/nexus/apps/nexus-api
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Check Cloudflare credentials
         id: creds
@@ -43,7 +43,7 @@ jobs:
             echo "proceed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         if: steps.creds.outputs.proceed == 'true'
         with:
           node-version: 24
